@@ -261,9 +261,11 @@ def Get_Feature(img_dir):
 
 def main():
 
-    image_root = "/home/yang/all_data/others/patu/model/sample_data"
-    img_list = GetimgList(image_root, "", [], [])
-    save_path = "/home/yang/all_data/others/patu/model/feature_res.pkl"
+    # image_root = "/home/yang/Workspace/Study/ML/all_data"
+    # img_list = GetimgList(image_root, "", [], [])
+    image_list_txt = open("/home/yang/Workspace/Study/ML/img_list_tiny.txt","r").readlines()
+    img_list = [i.split()[0] for i in image_list_txt]
+    save_path = "/home/yang/Workspace/Study/ML/results/feature_res_tiny.pkl"
 
     feature_res = collections.OrderedDict()
     for image_i in img_list:

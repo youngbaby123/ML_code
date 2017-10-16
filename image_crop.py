@@ -20,15 +20,15 @@ def img_crop(img_path, save_path, scale = 1):
     print ori_img.shape
 
 def main():
-    img_root = "/home/yang/all_data/others/patu/model/ori_data/{}".format("model_zipai")
-    save_root = "/home/yang/all_data/others/patu/model/out_data/{}".format("model_zipai_crop")
+    img_root = "/home/yang/Workspace/Study/ML/all_data/{}".format("model_pass")
+    save_root = "/home/yang/Workspace/Study/ML/all_data/{}".format("model_pass_fix")
     if not os.path.exists(save_root):
         os.makedirs(save_root)
     for img_name in os.listdir(img_root):
         img_dir = os.path.join(img_root, img_name)
         for i in range(1):
-            save_dir = os.path.join(save_root,"{}_corp_{}.jpg".format(img_name.split(".")[0], i))
-            scale = random.uniform(0.95,1.0)
+            save_dir = os.path.join(save_root,"{}_crop_{}.jpg".format(img_name.split(".")[0], i))
+            scale = random.uniform(0.99,1.0)
             img_crop(img_dir, save_dir, scale)
 
 
